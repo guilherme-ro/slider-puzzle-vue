@@ -1,4 +1,4 @@
-# vue-example-ch3-slider-puzzle
+# slider-puzzle-vue
 
 ## Project setup
 ```
@@ -15,7 +15,7 @@ npm run serve
 npm run build
 ```
 
-### Run your unit tests
+### Run unit tests
 ```
 npm run test:unit
 ```
@@ -25,5 +25,3 @@ npm run test:unit
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
