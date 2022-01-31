@@ -1,23 +1,27 @@
 <template>
-  <div>
-    <h1 class="title">Clique em duas imagens pra mudá-las de lugar</h1>
-    <div class="game-set my-3">
-      <button @click="start" id="start-button">Iniciar o Jogo</button>
-      <button @click="stop" id="quit-button">Desistir</button>
-    </div>
-    <p>Tempo Decorrido: {{ elapsedTime }}</p>
-    <p v-if="isWinning">Você Venceu!</p>
-    <div class="row">
-      <div
-        class="column"
-        v-for="(s, index) of shuffledPuzzleArray"
-        :key="s"
-        @click="swap(index)"
-      >
-        <img :src="require(`../assets/${puzzleId}/${s}`)" />
+    <div class="container">
+       <div class="row">
+        <div class="col-12 mb-4">
+            <h1 class="title">Clique em duas imagens pra mudá-las de lugar</h1>
+            <div class="game-set my-3">
+              <button @click="start" id="start-button">Iniciar o Jogo</button>
+              <button @click="stop" id="quit-button">Desistir</button>
+            </div>
+            <p>Tempo Decorrido: {{ elapsedTime }}</p>
+            <p v-if="isWinning">Você Venceu!</p>
+            <div class="row">
+              <div
+                class="column"
+                v-for="(s, index) of shuffledPuzzleArray"
+                :key="s"
+                @click="swap(index)"
+              >
+                <img :src="require(`../assets/${puzzleId}/${s}`)" />
+              </div>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

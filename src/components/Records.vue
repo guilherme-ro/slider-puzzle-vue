@@ -1,11 +1,18 @@
 <template>
-  <div class="my-5">
-    <h1 class="title">Records</h1>
-    <div class="game-set my-3">
-      <button @click="getRecords">Atualizar a Lista</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <div class="mb-5">
+              <h1 class="title">Records</h1>
+              <div class="game-set my-3">
+                <button @click="getRecords">Atualizar a Lista</button>
+              </div>
+              <div v-for="(r, index) of records" :key="index">{{index + 1}} - {{r.elapsedTime}}</div>
+            </div>
+        </div>
+      </div>
     </div>
-    <div v-for="(r, index) of records" :key="index">{{index + 1}} - {{r.elapsedTime}}</div>
-  </div>
+
 </template>
 
 <script>

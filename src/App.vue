@@ -1,22 +1,28 @@
 <template>
   <div>
+    <Header />
     <Puzzles @puzzle-changed="selectedPuzzleId = $event" />
     <Records />
     <SliderPuzzle :puzzleId="selectedPuzzleId" />
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from "./components/Header.vue";
 import SliderPuzzle from "./components/SliderPuzzle.vue";
 import Puzzles from "./components/Puzzles.vue";
 import Records from "./components/Records.vue";
+import Footer from "./components/Footer.vue"
 
 export default {
   name: "App",
   components: {
+    Header,
     SliderPuzzle,
     Puzzles,
     Records,
+    Footer
   },
   data() {
     return {

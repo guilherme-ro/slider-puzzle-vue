@@ -1,18 +1,21 @@
 <template>
-  <div>
-    <h1 class="puzzle-title">Escolha um quebra-cabeça</h1>
-    <div v-for="p of puzzles" :key="p.id" class="row">
-      <div class="puzzle-thumbnail">
-        <img :src="require(`../assets/${p.image}`)" />
-      </div>
-      <div>
-        <h2>{{p.title}}</h2>
-      </div>
-      <div class="play-button">
-        <button @click="selectPuzzle(p)">Jogar</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 my-5">
+            <div v-for="p of puzzles" :key="p.id" class="row">
+              <div class="puzzle-thumbnail">
+                <img :src="require(`../assets/${p.image}`)" />
+              </div>
+              <div>
+                <h2>{{p.title}}</h2>
+              </div>
+              <div class="play-button">
+                <button @click="selectPuzzle(p)">Jogar</button>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -35,6 +38,11 @@ export default {
 </script>
 
 <style scoped>
+
+header {
+  background: #ffd40c;
+}
+
 .row {
   display: flex;
   max-width: 90vw;
